@@ -20,6 +20,7 @@ $group = $_GET['group'];
 	<link href="http://www.smashrank.com/smashlayout.css" rel='stylesheet' type="text/css" title="Default">
 	<link href="http://www.smashrank.com/button.css" rel='stylesheet' type="text/css" title="Default">
 	</head>
+	  <a href="/?group=<?echo $group?>"> Return </a>
       <h1><? echo "{$group} Admin Access"; ?></h1>
 	  <form method="POST" action="admin.php?group=<?echo $group?>">
        Password <input type="password" name="pass"></input><br/>
@@ -147,12 +148,13 @@ function ajaxFunction(option){
 			<td> <input type="text" id="location"> </td>
 		</tr>
 	</table>
-	<button class="cupid-blue" onclick="ajaxFunction('player')" value="Create"> Create </button>
+	<button class="cupid-blue" onclick="ajaxFunction('player')" value="Create"> Create </button> <br>
+	<br>
 	<button class="cupid-blue" onclick="ajaxFunction('delete')" value="Delete"> Delete Database </button>
 	<div id="output"></div>
 
 	
-
+<? // Add a database about activity done to database?>
 
 
 

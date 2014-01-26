@@ -12,11 +12,11 @@ if ($_GET['winner'] && $_GET['loser'] && $_GET['group']) {
  $user = $_SERVER['REMOTE_ADDR'];
  
  // Get the winner
- $result = mysql_query("SELECT * FROM db_".$_GET['group']." WHERE player_id = ".$_GET['winner']." ");
+ $result = mysql_query("SELECT * FROM db_".$_GET['group']." WHERE player_id = ".$_GET['winner']);
  $winner = mysql_fetch_object($result);
  
  // Get the loser
- $result = mysql_query("SELECT * FROM db_".$_GET['group']." WHERE player_id = ".$_GET['loser']." ");
+ $result = mysql_query("SELECT * FROM db_".$_GET['group']." WHERE player_id = ".$_GET['loser']);
  $loser = mysql_fetch_object($result);
  
  // Update the winner score
@@ -33,7 +33,7 @@ if ($_GET['winner'] && $_GET['loser'] && $_GET['group']) {
  
  // Insert battle
  mysql_query("INSERT INTO battles_".$_GET['group']." SET winner = ".$_GET['winner'].", loser = ".$_GET['loser'].", user = '".$user."'");
- 
+ header('location: /');
 }
 
 // Echo the new TWO players vs get from database
